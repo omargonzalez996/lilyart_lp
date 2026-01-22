@@ -10,7 +10,7 @@ const About = () => {
       {/* Que es LilyArt */}
       <div className="container mx-auto px-4 text-center my-22">
         <h2 className="text-3xl md:text-4xl font-bold text-base-content mb-10">
-          ¿Qué es LilyArt?
+          ¿QUÉ ES LILYART?
         </h2>
         <p className="text-base md:text-lg text-base-content text-center leading-relaxed">
           ¡Da vida a tu creatividad! ¿Buscas un diseño de body paint o face
@@ -79,7 +79,7 @@ const About = () => {
       {/* ¿Por qué confiar en nosotros? */}
       <div className="container mx-auto px-4 text-center my-22">
         <h2 className="text-3xl md:text-4xl font-bold text-base-content mb-10">
-          ¿Por qué confiar en nosotros?
+          ¿POR QUÉ CONFIAR EN NOSOTROS?
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Diseño Personalizado */}

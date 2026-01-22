@@ -1,0 +1,82 @@
+import React, { useEffect, useRef, useState } from 'react';
+
+const ScrollAnimation = ({
+    children,
+    animation = 'fade-up',
+    delay = 0,
+    threshold = 0.1,
+    className = ''
+}) => {
+    const [isVisible, setIsVisible] = useState(false);
+    const ref = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.unobserve(entry.target);
+                }
+            },
+            { threshold }
+        );
+
+        const currentRef = ref.current;
+        if (currentRef) {
+            observer.observe(currentRef);
+        }
+
+        return () => {
+            if (currentRef) {
+                observer.unobserve(currentRef);
+            }
+        };
+    }, [threshold]);
+
+    const animations = {
+        'fade-up': {
+            initial: 'opacity-0 translate-y-8',
+            animate: 'opacity-100 translate-y-0'
+        },
+        'fade-down': {
+            initial: 'opacity-0 -translate-y-8',
+            animate: 'opacity-100 translate-y-0'
+        },
+        'fade-left': {
+            initial: 'opacity-0 translate-x-8',
+            animate: 'opacity-100 translate-x-0'
+        },
+        'fade-right': {
+            initial: 'opacity-0 -translate-x-8',
+            animate: 'opacity-100 translate-x-0'
+        },
+        'fade': {
+            initial: 'opacity-0',
+            animate: 'opacity-100'
+        },
+        'scale': {
+            initial: 'opacity-0 scale-95',
+            animate: 'opacity-100 scale-100'
+        },
+        'scale-up': {
+            initial: 'opacity-0 scale-75',
+            animate: 'opacity-100 scale-100'
+        }
+    };
+
+    const { initial, animate } = animations[animation] || animations['fade-up'];
+
+    return (
+        <div
+            ref={ref}
+            className={`transition-all duration-700 ease-out ${
+                isVisible ? animate : initial
+            } ${className}`}
+            style={{ transitionDelay: `${delay}ms` }}
+        >
+            {children}
+        </div>
+    );
+};
+
+export default ScrollAnimation;
