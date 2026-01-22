@@ -5,6 +5,7 @@ import {
   FaPhoneSquare,
 } from "react-icons/fa";
 import { IoCheckmarkCircle, IoAlertCircle } from "react-icons/io5";
+import OptimizedImage from "./OptimizedImage";
 
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -114,7 +115,7 @@ const Hero = () => {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('/b002.png')",
+          backgroundImage: "url('/b002.webp')",
           transform: `translateY(${scrollY * 0.5}px)`,
           willChange: "transform",
         }}
@@ -128,7 +129,7 @@ const Hero = () => {
         <div className="lg:w-1/2 w-full relative mb-5">
           <div className="absolute inset-0 flex flex-col items-center justify-center text-base-100 bg-black bg-opacity-50 rounded-md">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              <img src="/lilyart_ext.png" className="w-64" alt="lilyart_logo" />
+              <OptimizedImage src="/lilyart_ext.png" className="w-64" alt="lilyart_logo" loading="eager" />
             </h1>
           </div>
         </div>

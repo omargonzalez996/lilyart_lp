@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import OptimizedImage from './OptimizedImage';
 
 const Carousel = ({ slides }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -27,7 +28,7 @@ const Carousel = ({ slides }) => {
                             key={index}
                             className="min-w-full w-full flex-shrink-0 flex-grow-0 relative"
                         >
-                            <img
+                            <OptimizedImage
                                 src={slide.src}
                                 alt={slide.alt}
                                 className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover bg-no-repeat bg-center"

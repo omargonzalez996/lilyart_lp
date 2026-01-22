@@ -3,6 +3,7 @@ import { MdHealthAndSafety } from "react-icons/md";
 import { IoHeartCircleSharp } from "react-icons/io5";
 import { MdCleanHands } from "react-icons/md";
 import { MdMonochromePhotos } from "react-icons/md";
+import OptimizedImage from "./OptimizedImage";
 
 const About = () => {
   return (
@@ -25,51 +26,51 @@ const About = () => {
       <div className="container mx-auto px-4 text-center my-10">
         <div className="carousel rounded-box">
           <div className="carousel-item">
-            <img
+            <OptimizedImage
               src="/pics/01.jpeg"
-              alt="Burger"
+              alt="Arte LilyArt 1"
               className="w-64 h-64 object-cover"
             />
           </div>
           <div className="carousel-item">
-            <img
+            <OptimizedImage
               src="/pics/02.jpeg"
-              alt="Burger"
+              alt="Arte LilyArt 2"
               className="w-64 h-64 object-cover"
             />
           </div>
           <div className="carousel-item">
-            <img
+            <OptimizedImage
               src="/pics/03.jpeg"
-              alt="Burger"
+              alt="Arte LilyArt 3"
               className="w-64 h-64 object-cover"
             />
           </div>
           <div className="carousel-item">
-            <img
+            <OptimizedImage
               src="/pics/04.jpeg"
-              alt="Burger"
+              alt="Arte LilyArt 4"
               className="w-64 h-64 object-cover"
             />
           </div>
           <div className="carousel-item">
-            <img
+            <OptimizedImage
               src="/pics/05.jpeg"
-              alt="Burger"
+              alt="Arte LilyArt 5"
               className="w-64 h-64 object-cover"
             />
           </div>
           <div className="carousel-item">
-            <img
+            <OptimizedImage
               src="/pics/06.jpeg"
-              alt="Burger"
+              alt="Arte LilyArt 6"
               className="w-64 h-64 object-cover"
             />
           </div>
           <div className="carousel-item">
-            <img
+            <OptimizedImage
               src="/pics/07.jpeg"
-              alt="Burger"
+              alt="Arte LilyArt 7"
               className="w-64 h-64 object-cover"
             />
           </div>

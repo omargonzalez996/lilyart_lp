@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { IoClose, IoChevronBack, IoChevronForward } from 'react-icons/io5';
 import Portal from './Portal';
+import OptimizedImage from './OptimizedImage';
 
 const Gallery = () => {
     const [selectedIndex, setSelectedIndex] = useState(null);
@@ -50,11 +51,10 @@ const Gallery = () => {
                             className="relative group cursor-pointer overflow-hidden rounded-lg aspect-square"
                             onClick={() => openLightbox(index)}
                         >
-                            <img
+                            <OptimizedImage
                                 src={image.src}
                                 alt={image.title}
                                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                                loading="lazy"
                             />
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
                                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center text-white p-4">
@@ -102,10 +102,11 @@ const Gallery = () => {
                             className="relative max-w-4xl max-h-[80vh] mx-4 z-10"
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <img
+                            <OptimizedImage
                                 src={images[selectedIndex].src}
                                 alt={images[selectedIndex].title}
                                 className="max-w-full max-h-[80vh] object-contain rounded-lg"
+                                loading="eager"
                             />
                             <div className="text-center mt-4 text-white">
                                 <p className="font-semibold text-lg">{images[selectedIndex].title}</p>

@@ -1,16 +1,16 @@
 import React from "react";
-
 import {
   FaInstagramSquare,
   FaWhatsappSquare,
   FaPhoneSquare,
 } from "react-icons/fa";
+import OptimizedImage from "./OptimizedImage";
 
 const Footer = () => {
   return (
     <footer className="footer footer-horizontal footer-center bg-primary text-primary-content p-10">
       <aside>
-        <img src="/logo_light.png" alt="lilyart" />
+        <OptimizedImage src="/logo_light.png" alt="lilyart" />
         <p className="font-bold">
           LilyArt
           <br />

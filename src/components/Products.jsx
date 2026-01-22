@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { IoClose } from 'react-icons/io5';
 import Portal from './Portal';
+import OptimizedImage from './OptimizedImage';
 
 const Products = () => {
     const [selectedProduct, setSelectedProduct] = useState(null);
@@ -96,7 +97,7 @@ const Products = () => {
                             onClick={() => openModal(product)}
                         >
                             {/* Background Image */}
-                            <img
+                            <OptimizedImage
                                 src={product.image}
                                 alt={product.name}
                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -149,10 +150,11 @@ const Products = () => {
 
                             {/* Product Image */}
                             <figure className="relative h-64 md:h-80">
-                                <img
+                                <OptimizedImage
                                     src={selectedProduct.image}
                                     alt={selectedProduct.name}
                                     className="w-full h-full object-cover"
+                                    loading="eager"
                                 />
                                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
                                     <h3 className="text-2xl md:text-3xl font-bold text-white">
