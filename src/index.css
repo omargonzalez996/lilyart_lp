@@ -1,20 +1,39 @@
 @import "tailwindcss";
 
+*, body {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+}
+
+.font-script {
+  font-family: 'Dancing Script', cursive;
+}
+
 @plugin "daisyui" {
   themes: light --default, dark --prefersdark, cupcake, valentine;
 }
 
+[data-theme="valentine"],
+[data-theme="dark"] {
+  --color-primary: oklch(72% 0.14 295);
+  --color-primary-content: oklch(98% 0.01 295);
+}
+
 @keyframes glow {
   0% {
-    box-shadow: 0 0 5px #f472b6, 0 0 10px #f472b6;
+    box-shadow: 0 0 5px oklch(72% 0.14 295), 0 0 10px oklch(72% 0.14 295);
   }
 
   50% {
-    box-shadow: 0 0 20px #f472b6, 0 0 30px #ec4899;
+    box-shadow: 0 0 20px oklch(72% 0.14 295), 0 0 30px oklch(65% 0.18 295);
   }
 
   100% {
-    box-shadow: 0 0 5px #f472b6, 0 0 10px #f472b6;
+    box-shadow: 0 0 5px oklch(72% 0.14 295), 0 0 10px oklch(72% 0.14 295);
   }
 }
 

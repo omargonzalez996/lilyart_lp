@@ -7,7 +7,7 @@ import OptimizedImage from "./OptimizedImage";
 
 const About = () => {
   return (
-    <div className="bg-base-200 py-12">
+    <div className="bg-base-100 py-12">
       {/* Que es LilyArt */}
       <div className="container mx-auto px-4 text-center my-22">
         <h2 className="text-3xl md:text-4xl font-bold text-base-content mb-10">
@@ -84,7 +84,7 @@ const About = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Diseño Personalizado */}
-          <div className="card bg-base-100 shadow-md p-6 rounded-md flex flex-col items-center">
+          <div className="card bg-base-200 shadow-md p-6 rounded-md flex flex-col items-center">
             <div className="rounded-md w-16 h-16 flex items-center justify-center mb-4">
               <IoHeartCircleSharp size={46} />
             </div>
@@ -99,7 +99,7 @@ const About = () => {
           </div>
 
           {/* Materiales Seguros */}
-          <div className="card bg-base-100 shadow-md p-6 rounded-md flex flex-col items-center">
+          <div className="card bg-base-200 shadow-md p-6 rounded-md flex flex-col items-center">
             <div className="rounded-md w-16 h-16 flex items-center justify-center mb-4">
               <MdHealthAndSafety size={46} />
             </div>
@@ -114,7 +114,7 @@ const About = () => {
           </div>
 
           {/* Fácil de Limpiar */}
-          <div className="card bg-base-100 shadow-md p-6 rounded-md flex flex-col items-center">
+          <div className="card bg-base-200 shadow-md p-6 rounded-md flex flex-col items-center">
             <div className="rounded-md w-16 h-16 flex items-center justify-center mb-4">
               <MdCleanHands size={46} />
             </div>
@@ -129,7 +129,7 @@ const About = () => {
           </div>
 
           {/* Sesiones Fotográficas */}
-          <div className="card bg-base-100 shadow-md p-6 rounded-md flex flex-col items-center">
+          <div className="card bg-base-200 shadow-md p-6 rounded-md flex flex-col items-center">
             <div className="rounded-md w-16 h-16 flex items-center justify-center mb-4">
               <MdMonochromePhotos size={46} />
             </div>

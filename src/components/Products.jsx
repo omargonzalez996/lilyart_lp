@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { IoClose } from 'react-icons/io5';
 import Portal from './Portal';
 import OptimizedImage from './OptimizedImage';
+import { BUSINESS } from '../config';
 
 const Products = () => {
     const [selectedProduct, setSelectedProduct] = useState(null);
@@ -9,69 +10,69 @@ const Products = () => {
     const products = [
         {
             id: 1,
-            name: 'Cuadro de Café',
+            name: 'Cuadro Acrílico',
             price: '$500',
             image: '/pics/01.jpeg',
-            description: 'Hermoso cuadro pintado con café.',
-            details: 'Obra de arte única creada utilizando café como pigmento principal. Cada cuadro es pintado a mano, lo que garantiza que no existen dos piezas iguales. El café le da tonalidades cálidas y un aroma sutil que perdura. Ideal para decorar espacios con un toque artístico y original.',
+            description: 'Pintura acrílica floral sobre lienzo con colores vibrantes.',
+            details: 'Cuadro pintado a mano con técnica acrílica sobre lienzo. En esta pieza se aprecian flores blancas con fondo en degradado de naranjas, verdes y azules. Cada cuadro es único y puede personalizarse con el diseño, colores y tamaño de tu elección. Ideal para decorar cualquier espacio con arte original.',
             dimensions: '40 x 50 cm',
-            materials: 'Café, lienzo, barniz protector',
+            materials: 'Pintura acrílica, lienzo, barniz protector',
             deliveryTime: '5-7 días hábiles'
         },
         {
             id: 2,
-            name: 'Chamarra Personalizada',
-            price: '$1200',
+            name: 'Sombrero Pintado',
+            price: '$800',
             image: '/pics/02.jpeg',
-            description: 'Chamarra de mezclilla con diseño único.',
-            details: 'Chamarra de mezclilla intervenida con pintura acrílica de alta calidad. Puedes elegir el diseño que más te guste o enviar tu propia idea. La pintura es resistente al lavado y no se cuartea con el uso. Perfecta para expresar tu estilo personal.',
-            dimensions: 'Tallas S, M, L, XL',
-            materials: 'Mezclilla, pintura acrílica textil',
-            deliveryTime: '10-14 días hábiles'
+            description: 'Sombrero decorado a mano con diseño de girasoles.',
+            details: 'Sombrero intervenido con pintura acrílica textil. El diseño muestra girasoles pintados a mano sobre la visera con fondo verde, logrando un acabado vibrante y duradero. Puedes solicitar el diseño de tu preferencia. Perfecto para eventos, sesiones fotográficas o uso diario con un estilo único.',
+            dimensions: 'Talla única ajustable',
+            materials: 'Sombrero, pintura acrílica textil',
+            deliveryTime: '7-10 días hábiles'
         },
         {
             id: 3,
-            name: 'Sombrero Pintado',
-            price: '$800',
+            name: 'Cuadro Personalizado',
+            price: '$650',
             image: '/pics/03.jpeg',
-            description: 'Sombrero pintado a mano con flores.',
-            details: 'Sombrero de palma decorado con diseños florales pintados a mano. Cada pieza es única y refleja la tradición artesanal mexicana combinada con técnicas modernas de pintura. Ideal para eventos especiales, sesiones fotográficas o para lucir un estilo único.',
-            dimensions: 'Talla única ajustable',
-            materials: 'Palma natural, pintura acrílica',
-            deliveryTime: '7-10 días hábiles'
+            description: 'Pintura de colibrí y flores en técnica mixta sobre fondo sepia.',
+            details: 'Cuadro pintado a mano que combina colores vibrantes con fondos cálidos en tonos tierra y sepia. Esta pieza muestra un colibrí multicolor sobre flores amarillas. La técnica permite lograr contrastes llamativos sobre fondos neutros. Puedes pedir tu propio diseño: animales, flores, paisajes o lo que imagines.',
+            dimensions: '35 x 25 cm',
+            materials: 'Pintura acrílica, papel de arte grueso',
+            deliveryTime: '5-7 días hábiles'
         },
         {
             id: 4,
-            name: 'Óleo Personalizado',
-            price: '$1500',
+            name: 'Face Paint',
+            price: '$500',
             image: '/pics/04.jpeg',
-            description: 'Pintura al óleo con el diseño de tu elección.',
-            details: 'Creamos pinturas al óleo personalizadas basadas en fotografías, paisajes o diseños originales. Utilizamos técnicas tradicionales que garantizan colores vibrantes y durabilidad. Cada obra es única y puede convertirse en el centro de atención de cualquier espacio.',
-            dimensions: '50 x 70 cm',
-            materials: 'Óleo, lienzo de algodón, bastidor de madera',
-            deliveryTime: '15-20 días hábiles'
+            description: 'Maquillaje artístico de calavera para eventos y sesiones fotográficas.',
+            details: 'Diseño de face paint completo pintado directamente sobre el rostro con pinturas hipoalergénicas certificadas para piel. Esta pieza muestra un diseño de calavera realista con detalle en grietas y sombreado. Ideal para eventos de Halloween, Día de Muertos, sesiones fotográficas o teatro. El maquillaje se aplica en sesión presencial y dura varias horas.',
+            dimensions: 'Aplicación en rostro completo',
+            materials: 'Pinturas hipoalergénicas, no tóxicas, aptas para piel',
+            deliveryTime: 'Previa cita'
         },
         {
             id: 5,
-            name: 'Tenis Intervenidos',
-            price: '$900',
+            name: 'Face Paint Día de Muertos',
+            price: '$600',
             image: '/pics/05.jpeg',
-            description: 'Tenis blancos con arte personalizado.',
-            details: 'Transforma tus tenis en una obra de arte única. Pintamos sobre tenis blancos con diseños personalizados que reflejan tu estilo. La pintura es resistente al agua y al uso diario. Puedes elegir entre nuestros diseños o enviar tu propia idea.',
-            dimensions: 'Todas las tallas disponibles',
-            materials: 'Pintura acrílica especial para tela y piel',
-            deliveryTime: '7-10 días hábiles'
+            description: 'Calavera artística con tocado colorido estilo Día de Muertos.',
+            details: 'Diseño de face paint inspirado en la tradición del Día de Muertos: calavera pintada sobre el rostro con detalle en grietas, acompañada de un tocado multicolor con listones. Pinturas hipoalergénicas de larga duración. Perfecto para festivales, bodas temáticas, eventos culturales y sesiones fotográficas. Se trabaja bajo cita previa.',
+            dimensions: 'Aplicación en rostro completo',
+            materials: 'Pinturas hipoalergénicas, no tóxicas, aptas para piel',
+            deliveryTime: 'Previa cita'
         },
         {
             id: 6,
-            name: 'Bolsa Pintada',
-            price: '$650',
+            name: 'Vestido Pintado',
+            price: '$1500',
             image: '/pics/06.jpeg',
-            description: 'Bolsa de tela con diseño artístico.',
-            details: 'Bolsas de tela de alta calidad intervenidas con diseños únicos pintados a mano. Perfectas para el día a día, compras o como accesorio de moda. Cada bolsa es una pieza única que combina funcionalidad con arte.',
-            dimensions: '40 x 35 cm',
-            materials: 'Tela de algodón, pintura textil',
-            deliveryTime: '5-7 días hábiles'
+            description: 'Vestido negro pintado a mano con diseño floral multicolor.',
+            details: 'Vestido de tela negra intervenido artísticamente con pintura textil acrílica. El diseño muestra un arreglo floral completo: girasoles, alcatraces, rosas y flores silvestres distribuidos en la falda y el corpiño. La pintura es resistente al lavado. Ideal para quinceañeras, bodas, eventos especiales o colecciones de moda únicas. El diseño puede personalizarse.',
+            dimensions: 'Tallas S, M, L, XL',
+            materials: 'Pintura acrílica textil, fijador permanente',
+            deliveryTime: '15-20 días hábiles'
         }
     ];
 
@@ -114,10 +115,7 @@ const Products = () => {
                                 <p className="text-sm text-gray-300 mb-3 line-clamp-2">
                                     {product.description}
                                 </p>
-                                <div className="flex items-center justify-between">
-                                    <span className="text-lg font-bold text-primary">
-                                        {product.price}
-                                    </span>
+                                <div className="flex items-center justify-end">
                                     <span className="btn btn-sm btn-primary btn-outline rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
                                         Ver Detalles
                                     </span>
@@ -160,9 +158,6 @@ const Products = () => {
                                     <h3 className="text-2xl md:text-3xl font-bold text-white">
                                         {selectedProduct.name}
                                     </h3>
-                                    <p className="text-2xl font-bold text-primary mt-1">
-                                        {selectedProduct.price}
-                                    </p>
                                 </div>
                             </figure>
 
@@ -190,7 +185,7 @@ const Products = () => {
                                 {/* Action Buttons */}
                                 <div className="flex gap-4 mt-6">
                                     <a
-                                        href="https://wa.me/524661010252"
+                                        href={BUSINESS.whatsapp}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="btn btn-primary flex-1"

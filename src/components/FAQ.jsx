@@ -44,11 +44,11 @@ const FAQ = () => {
     };
 
     return (
-        <section className="py-16 px-4 bg-base-200">
+        <section className="py-16 px-4 bg-base-100">
             <div className="max-w-3xl mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold mb-4">Preguntas Frecuentes</h2>
-                    <p className="text-gray-600">
+                    <p className="text-base-content/70">
                         Encuentra respuestas a las dudas más comunes
                     </p>
                 </div>
@@ -57,7 +57,7 @@ const FAQ = () => {
                     {faqs.map((faq, index) => (
                         <div
                             key={index}
-                            className="bg-base-100 rounded-lg shadow-md overflow-hidden"
+                            className="bg-base-200 rounded-lg shadow-md overflow-hidden"
                         >
                             <button
                                 className="w-full px-6 py-4 text-left flex items-center justify-between gap-4 hover:bg-base-200/50 transition-colors"
@@ -76,7 +76,7 @@ const FAQ = () => {
                                     openIndex === index ? 'max-h-96' : 'max-h-0'
                                 }`}
                             >
-                                <p className="px-6 pb-4 text-gray-600 leading-relaxed">
+                                <p className="px-6 pb-4 text-base-content/80 leading-relaxed">
                                     {faq.answer}
                                 </p>
                             </div>

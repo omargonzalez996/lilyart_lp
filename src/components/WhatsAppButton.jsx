@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
+import { BUSINESS } from '../config';
 
 const WhatsAppButton = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [isPulsing, setIsPulsing] = useState(true);
-
-    const phoneNumber = '524661010252';
-    const message = 'Hola, me gustaría obtener más información sobre sus servicios.';
 
     useEffect(() => {
         const handleScroll = () => {
@@ -23,11 +21,9 @@ const WhatsAppButton = () => {
         return () => clearTimeout(timer);
     }, []);
 
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
     return (
         <a
-            href={whatsappUrl}
+            href={BUSINESS.whatsappContact}
             target="_blank"
             rel="noopener noreferrer"
             className={`fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 ${

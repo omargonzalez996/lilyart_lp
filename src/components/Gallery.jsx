@@ -7,13 +7,13 @@ const Gallery = () => {
     const [selectedIndex, setSelectedIndex] = useState(null);
 
     const images = [
-        { id: 1, src: '/pics/01.jpeg', title: 'Cuadro de Café', category: 'Pintura' },
-        { id: 2, src: '/pics/02.jpeg', title: 'Chamarra Personalizada', category: 'Pintura' },
-        { id: 3, src: '/pics/03.jpeg', title: 'Sombrero Pintado', category: 'Pintura' },
-        { id: 4, src: '/pics/04.jpeg', title: 'Body Paint Floral', category: 'BodyPaint' },
-        { id: 5, src: '/pics/05.jpeg', title: 'Diseño Artístico', category: 'BodyPaint' },
-        { id: 6, src: '/pics/06.jpeg', title: 'Pintura Corporal', category: 'BodyPaint' },
-        { id: 7, src: '/pics/07.jpeg', title: 'Arte en Lienzo', category: 'Pintura' },
+        { id: 1, src: '/pics/01.jpeg', title: 'Cuadro Acrílico Floral', category: 'Pintura' },
+        { id: 2, src: '/pics/02.jpeg', title: 'Sombrero con Girasoles', category: 'Accesorios' },
+        { id: 3, src: '/pics/03.jpeg', title: 'Colibrí y Flores', category: 'Pintura' },
+        { id: 4, src: '/pics/04.jpeg', title: 'Calavera Realista', category: 'Face Paint' },
+        { id: 5, src: '/pics/05.jpeg', title: 'Día de Muertos', category: 'Face Paint' },
+        { id: 6, src: '/pics/06.jpeg', title: 'Vestido Pintado', category: 'Textil' },
+        { id: 7, src: '/pics/07.jpeg', title: 'Catrina en Cempasúchil', category: 'Body Paint' },
     ];
 
     const openLightbox = (index) => setSelectedIndex(index);

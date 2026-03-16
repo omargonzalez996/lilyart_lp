@@ -6,6 +6,7 @@ import {
 } from "react-icons/fa";
 import { IoCheckmarkCircle, IoAlertCircle } from "react-icons/io5";
 import OptimizedImage from "./OptimizedImage";
+import { BUSINESS } from "../config";
 
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -41,55 +42,18 @@ const Hero = () => {
     setIsSubmitting(true);
     setStatus({ type: "", message: "" });
 
-    // EmailJS Configuration
-    // To enable email sending:
-    // 1. Create an account at https://www.emailjs.com/
-    // 2. Create an email service and template
-    // 3. Replace the values below with your credentials
-    const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-    const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-    const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
-
-    // Fallback: Open WhatsApp with the message
-    // To enable EmailJS:
-    // 1. Install: npm install @emailjs/browser
-    // 2. Create account at https://www.emailjs.com/
-    // 3. Configure the credentials above
-    // 4. Uncomment the EmailJS code below and remove this fallback
-
-    const whatsappMessage = `Hola, soy ${formData.name}.\n\nAsunto: ${formData.subject}\n\n${formData.message}\n\nMi correo es: ${formData.email}`;
-    const whatsappUrl = `https://wa.me/524661010252?text=${encodeURIComponent(whatsappMessage)}`;
-
-    setStatus({
-      type: "info",
-      message: "Redirigiendo a WhatsApp para enviar tu mensaje...",
-    });
-
-    setTimeout(() => {
-      window.open(whatsappUrl, "_blank");
-      setIsSubmitting(false);
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setStatus({
-        type: "success",
-        message: "Gracias por contactarnos. Te responderemos pronto.",
-      });
-    }, 1000);
-
-    /* EmailJS Integration (uncomment when configured)
     try {
       const emailjs = await import("@emailjs/browser");
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-      };
-
       await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        templateParams,
-        EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
       setStatus({
@@ -98,7 +62,6 @@ const Hero = () => {
       });
       setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
-      console.error("Error sending email:", error);
       setStatus({
         type: "error",
         message: "Error al enviar el mensaje. Por favor intenta de nuevo.",
@@ -106,7 +69,6 @@ const Hero = () => {
     } finally {
       setIsSubmitting(false);
     }
-    */
   };
 
   return (
@@ -127,9 +89,9 @@ const Hero = () => {
       <div className="hero-content flex-col lg:flex-row w-full relative z-10">
         {/* Image Section with Overlay Text */}
         <div className="lg:w-1/2 w-full relative mb-5">
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-base-100 bg-black bg-opacity-50 rounded-md">
+          <div className="flex flex-col items-center justify-center text-base-100 py-10 lg:py-0 lg:absolute lg:inset-0">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              <OptimizedImage src="/lilyart_ext.png" className="w-64" alt="lilyart_logo" loading="eager" />
+              <OptimizedImage src={BUSINESS.logo} className="w-64 invert" alt="LilyArt - Body Paint y Arte Personalizado en México" loading="eager" />
             </h1>
           </div>
         </div>
@@ -141,7 +103,7 @@ const Hero = () => {
             <ul className="flex justify-center items-center w-full gap-5 my-5">
               <li className="btn btn-ghost btn-primary p-0 rounded-md">
                 <a
-                  href="https://www.instagram.com/gonz.dev"
+                  href={BUSINESS.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -150,7 +112,7 @@ const Hero = () => {
               </li>
               <li className="btn btn-ghost btn-primary p-0 rounded-md">
                 <a
-                  href="https://wa.me/524661010252"
+                  href={BUSINESS.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -159,9 +121,7 @@ const Hero = () => {
               </li>
               <li className="btn btn-ghost btn-primary p-0 rounded-md">
                 <a
-                  href="tel:+524661010252"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`tel:${BUSINESS.phone}`}
                 >
                   <FaPhoneSquare size={40} />
                 </a>

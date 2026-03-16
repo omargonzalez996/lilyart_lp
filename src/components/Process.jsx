@@ -51,7 +51,7 @@ const Process = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="py-16 px-4 bg-base-200 overflow-hidden">
+        <section ref={sectionRef} className="py-16 px-4 bg-base-100 overflow-hidden">
             <div className="max-w-6xl mx-auto">
                 <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                     <h2 className="text-3xl font-bold mb-4">Nuestro Proceso</h2>
@@ -72,7 +72,7 @@ const Process = () => {
                             style={{ transitionDelay: `${index * 150 + 200}ms` }}
                         >
                             {/* Card */}
-                            <div className="group bg-base-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 text-center h-full">
+                            <div className="group bg-base-200 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 text-center h-full">
                                 {/* Icon Container */}
                                 <div className={`relative mx-auto w-20 h-20 rounded-2xl bg-gradient-to-br ${step.gradient} flex items-center justify-center shadow-lg mb-5 group-hover:scale-110 transition-transform duration-300`}>
                                     <step.icon className="text-white text-3xl" />
@@ -103,7 +103,7 @@ const Process = () => {
                             className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}
                             style={{ transitionDelay: `${index * 150 + 200}ms` }}
                         >
-                            <div className="bg-base-100 rounded-xl p-5 shadow-lg flex gap-4 items-start">
+                            <div className="bg-base-200 rounded-xl p-5 shadow-lg flex gap-4 items-start">
                                 {/* Icon */}
                                 <div className={`relative flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br ${step.gradient} flex items-center justify-center shadow-md`}>
                                     <step.icon className="text-white text-2xl" />

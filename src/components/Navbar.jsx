@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { IoSunny, IoMoon } from 'react-icons/io5';
 import OptimizedImage from './OptimizedImage';
+import { BUSINESS } from '../config';
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -109,9 +110,9 @@ const Navbar = () => {
         </div>
         <div className="flex items-center pl-10">
           <OptimizedImage
-            src={theme === 'dark' ? '/logo_light.png' : '/logo_dark.png'}
-            className="w-22"
-            alt="lilyart_logo"
+            src={BUSINESS.logo}
+            className={theme === 'dark' ? 'w-22 invert' : 'w-22'}
+            alt={BUSINESS.name}
             loading="eager"
           />
         </div>

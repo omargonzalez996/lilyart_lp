@@ -38,11 +38,11 @@ const Testimonials = () => {
     ];
 
     return (
-        <section className="py-16 px-4 bg-base-200">
+        <section className="py-16 px-4 bg-base-100">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold mb-4">Lo Que Dicen Nuestros Clientes</h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-base-content/70 max-w-2xl mx-auto">
                         La satisfacción de nuestros clientes es nuestra mayor recompensa
                     </p>
                 </div>
@@ -51,11 +51,11 @@ const Testimonials = () => {
                     {testimonials.map((testimonial) => (
                         <div
                             key={testimonial.id}
-                            className="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                            className="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow duration-300"
                         >
                             <div className="card-body">
                                 <FaQuoteLeft className="text-primary/30 text-3xl mb-2" />
-                                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                                <p className="text-base-content/80 text-sm leading-relaxed mb-4">
                                     {testimonial.comment}
                                 </p>
                                 <div className="flex items-center gap-1 mb-4">
@@ -71,7 +71,7 @@ const Testimonials = () => {
                                     />
                                     <div>
                                         <p className="font-semibold text-sm">{testimonial.name}</p>
-                                        <p className="text-xs text-gray-500">{testimonial.role}</p>
+                                        <p className="text-xs text-base-content/60">{testimonial.role}</p>
                                     </div>
                                 </div>
                             </div>
